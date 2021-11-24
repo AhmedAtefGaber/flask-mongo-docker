@@ -4,7 +4,7 @@ import datetime, pymongo
 app = Flask(__name__)
 
 timeStamp = datetime.datetime.now().timestamp()
-myclient = pymongo.MongoClient("mongodb://mongo:jPG1KhkyMP@3.109.212.126:27017/")
+myclient = pymongo.MongoClient("mongodb://mongo:jPG1KhkyMP@db-svc:27017/")
 dblist = myclient.list_database_names()
 
 if "mydatabase" not in dblist:
