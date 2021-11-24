@@ -3,9 +3,12 @@
 ##### container1 - should be able to accept a string through http
 ##### container2 - hosts a simple mongodb database
 ---
-Once container1 receives a string (e.g. “foo”), it will append something to it (e.g. “bar”), and will then send the original string as well as the modified one (“foo” + “foobar”) to container2. 
+Once container1 receives a string (e.g. “foo”), it will append something to it (e.g. “bar”).
+Then it will send the original string as well as the modified one (“foo” + “foobar”) to container2. 
 Both strings are then saved in the database of container2 together with a timestamp.
 Ideally the two containers are not on the same host, but are instead linked through a private network which they use for communication.
+
+
 ---
 ### So, Please follow the below steps:
 1. Let's create a Swarm cluster of the two docker hosts docker-1 and docker-2. 
@@ -13,7 +16,7 @@ so, to Initialize a swarm and make docker-1 as the master node.
 ```
 $ docker swarm init
 ```
-<img src="images/swarm-init.png width=" >
+<img src="images/swarm-init.png" >
 
 2. Copy the join command and run it on docker-2. So, it will join swarm as a worker node.
 ```
